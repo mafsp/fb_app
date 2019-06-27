@@ -4,18 +4,42 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
-        <span class="sr-only">Bootstrap</span>
+        <span class="sr-only">fb_app</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bootstrap
-
-      </a>
+      <a class="navbar-brand" href="#">FB_app</a>
     </div>
     <div id="gnavi" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li>top#index</li>
+        <p class = "top_heading">写真をみんなで共有しよう！</p>
+        <% if logged_in? %>
+          <div class = "container">
+            <ul class = "row">
+              <li class =  "col-xs-6">
+                <%= link_to "Profile", user_path(current_user.id) %>
+              </li>
+              <li class = "col-xs-6">
+                <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+          <div class="container">
+            <ul class = "row">
+              <li class = "sl col-xs-6">
+                <%= link_to "Sign up", new_user_path %>
+              </li>
+              <li class = "sl col-xs-6">
+                <%= link_to "Login", new_session_path %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+
+
+
       </ul>
     </div>
   </div>

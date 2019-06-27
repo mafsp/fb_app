@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Feeds</h1>
+<header>写真一覧！</header>
 
 <table>
   <thead>
@@ -9,8 +9,9 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+<br>
+<br>
 
-#以下が、イメージをどんどん並べていくメソッド。
   <tbody>
     <% @feeds.each do |feed| %>
       <tr>
@@ -25,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Feed', new_feed_path %>
+<%= link_to '写真を投稿画面にいく', new_feed_path %>

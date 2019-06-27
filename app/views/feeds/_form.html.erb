@@ -11,13 +11,23 @@
     </div>
   <% end %>
 
+  <div class="blog_title">
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  </div>
+  <br>
+  <div class="blog_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <br>
   <div class="field">
     <%= form.label :image %>
     <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
     <%= form.file_field :image, id: :feed_image %>
     <%= form.hidden_field :image_cache %>
   </div>
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>
