@@ -23,8 +23,11 @@
         <td><%= feed.content %></td>
         <td><%= feed.image %></td>
         <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if current_user.try(:id) == feed.user_id %>
+          <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
+          <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
