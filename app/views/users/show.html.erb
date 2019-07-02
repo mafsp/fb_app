@@ -2,4 +2,40 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
+
+<table>
+  <thead>
+    <tr>
+      <th>投稿者</th>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<br>
+<br>
+
+  <tbody>
+      <% @feeds.each do |feed| %>
+        <tr>
+          <% if current_user.try(:id) == feed.user_id %>
+            <td><%= feed.user.name %></td>
+            <td><%= feed.title %></td>
+            <td><%= feed.content %></td>
+            <td><%= feed.image %></td>
+            <td><%= link_to 'Show', feed %></td>
+            <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
+            <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
+
+
+
+
 <li class="menus"><%= link_to "投稿一覧ページへ", feeds_path %></li>
+<br>
