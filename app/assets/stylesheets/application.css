@@ -14,3 +14,20 @@
  *= require_tree .
  *= require_self
  */
+
+.name{
+  background-color: #3b5998;
+  color: #fff;
+  font-size:30px;
+  height: 45px;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.contain{
+  text-align: center;
+  color: #fff;
+  background-color: #3b5998;
+  height: 77px;
+  padding-top: 20px;
+}

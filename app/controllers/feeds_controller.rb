@@ -15,7 +15,7 @@ class FeedsController < ApplicationController
       @feed = Feed.new
     end
   end
-
+  # confirm ⇨ kənfə'ːrm
   def confirm
     @feed = Feed.new(feed_params)
     @feed.user_id = current_user.id
@@ -30,7 +30,7 @@ class FeedsController < ApplicationController
     @feed.user_id = current_user.id
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to feeds_path, notice: '投稿されました！' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
@@ -66,6 +66,6 @@ class FeedsController < ApplicationController
     end
 
     def feed_params
-      params.require(:feed).permit(:image, :image_cache)
+      params.require(:feed).permit(:title, :content, :image, :image_cache)
     end
 end

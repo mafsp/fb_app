@@ -1,6 +1,5 @@
-#ユーザ個人の詳細ページ
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
 
-#ここに一覧ページへのリンクを貼りたい。
+<li class="menus"><%= link_to "投稿一覧ページへ", feeds_path %></li>
