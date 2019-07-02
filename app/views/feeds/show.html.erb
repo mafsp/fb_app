@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<p>投稿者:<%= @feed.user.name %>さん</p>
+
+<p>
+  <strong>Title: </strong>
+  <%= @feed.title %>
+</p>
+
+<p>
+  <strong>Content: </strong>
+  <%= @feed.content %>
+</p>
+
 <p>
   <strong>Image:</strong>
   <%= image_tag @feed.image %>

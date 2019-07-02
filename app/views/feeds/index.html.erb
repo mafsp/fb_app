@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>投稿者</th>
       <th>タイトル</th>
       <th>内容</th>
       <th>Image</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @feeds.each do |feed| %>
       <tr>
+        <td><%= feed.user.name %></td>
         <td><%= feed.title %></td>
         <td><%= feed.content %></td>
         <td><%= feed.image %></td>
