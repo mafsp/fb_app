@@ -10,22 +10,21 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
 
       <% if logged_in? %>
-          <ul>
-            <li class="name">Fb_app</li>
-            <br>
+          <li class="name">Fb_app</li>
+          <ul class="top_menu clearfix">
             <li>ログインユーザー: <%= current_user.name %>さん</li>
             <li class="menus"><%= link_to "投稿一覧", feeds_path %></li>
             <li><%= link_to "Profile", user_path(current_user.id) %></li>
             <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
           </ul>
       <% else %>
-          <ul>
+          <ul class="top_menu clearfix">
             <li class="name">Fb_app</li>
             <br>
             <li><%= link_to "Sign up", new_user_path %></li>

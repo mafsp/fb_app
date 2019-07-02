@@ -3,11 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1{
-  background-color: #3b5998;
-  color: #FFFFFF;
   font-size: 35px;
 }
 
 body{
   background-color: #cfd2d6;
+}
+
+
+.sh tr{
+  height: 5rem;
+}
+
+.sh th{
+  width: 100px;
+  background-color: #B1B1B1;
+  color: #fff;
+}
+
+.sh td{
+  width: 560px;
+  padding-left: 1rem;
+  border: solid 1px #B1B1B1;
 }
