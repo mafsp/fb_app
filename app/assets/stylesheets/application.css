@@ -15,6 +15,10 @@
  *= require_self
  */
 
+.name_app{
+  float:left;
+}
+
 .name{
   background-color: #3b5998;
   color: #fff;
@@ -35,7 +39,7 @@
 .top_menu li {
   float: left;
   padding: 15px;
-  
+
 }
 
 .clearfix:after {
