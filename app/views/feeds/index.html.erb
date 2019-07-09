@@ -21,7 +21,8 @@
         <td><%= feed.user.name %></td>
         <td><%= feed.title %></td>
         <td><%= feed.content %></td>
-        <td><%= feed.image %></td>
+        <td><%= image_tag feed.image %></td>
+
         <td><%= link_to 'Show', feed %></td>
 
         <% if current_user.try(:id) == feed.user_id %>
